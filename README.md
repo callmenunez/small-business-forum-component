@@ -1,1 +1,1 @@
-# small-business-forum-component
+# hosting-component
