@@ -1,46 +1,42 @@
 // Header, footer, navigation, section 
-section.hosting-component {
+section.small-business-forum-component {
   padding: 50px 0;
-  .col-md-6:last-of-type {
-    background-color: $color-black-alpha-04;
-  }
-  .left, .right {
-    max-width: 500px;
+  .col-md-4 {
+    border-right: 1px solid $color-black-alpha-18;
+    &:last-of-type {
+      border-right: none;
+    }
   }
   .left {
-    float: right;
-    display: flex;
-    align-items: flex-end;
-    height: 100%;
-    img {
-      margin-bottom: 14px;
-      margin-right: 80px;
-    }
-    .grey-extension{
-      display: block;
-      width: 140px;
-      background-color: $color-black-alpha-04;
-      height: 100%;
-      position: absolute;
-      z-index: -1;
-      right:0;
-    }
+    padding-right: 15px;
+  }
+  .middle {
+    padding: 0 15px;
   }
   .right {
-    padding: 80px 0 60px 60px;
+    padding-left: 15px;
+  }
+  img {
+    width: 100%;
+    margin-bottom: 20px;
+    max-height: 212px;
+  }
+  p {
+    color: $color-black-alpha-60;
+    margin-bottom: 20px;
   }
   h1 {
     font-size: 36px;
-    color: $color-black-alpha-87;
     font-weight: 300;
+    margin-bottom: 80px;
   }
-  h2 {
-    font-size: 18px;
-    color: $color-black-alpha-87;
-    margin-bottom: 40px;
+  h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 36px;
     &:after {
       background: none repeat scroll 0 0 $color-blue-purple-base;
-      bottom: -15px;
+      bottom: -18px;
       content: "";
       display: block;
       height: 1px;
@@ -48,9 +44,12 @@ section.hosting-component {
       width: 80px;
     }
   }
-  p {
+  h4 {
+    font-size: 12px;
     color: $color-black-alpha-60;
-    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 28px;
   }
   .btn-blue {
     background-color: $color-blue-base;
@@ -58,40 +57,60 @@ section.hosting-component {
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 12px;
-    padding: 14px 30px; 
+    padding: 10px 30px; 
   }
   @media only screen and (max-width: 768px) {
-    background: $color-black-alpha-04;
-    .col-md-6:last-of-type {
-      background: none;
+    .col-md-4 {
+      border-right: none;
     }
     .left {
-      display: flex;
-      min-width: 100%;
-      justify-content: center;
-      align-content: center;
-      .grey-extension {
-        display: none;
-      }
-      img {
-        width: 100%;
-        max-width: 400px;
-        margin: 0;
-      }
+      padding-right: 0;
+    }
+    .middle {
+      padding: 0 0;
     }
     .right {
-      max-width: 100%;
-      padding: 60px 90px 0 90px;
+      padding-left: 0;
+    }
+    .left, .middle, .right {
+      display: inline-flex;
+      div {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    img {
+      height: 100%;
+      max-width: 260px;
+      margin: 0 40px 60px 0;
+    }
+    h1 {
+      margin-bottom: 60px;
+    }
+    h3 {
+      margin-bottom: 12px;
+      &:after {
+        background: none;
+      }
+    }
+    h4 {
+      margin-bottom: 16px;
+    }
+    p {
+      display: none;
     }
   }
   @media only screen and (max-width: 480px) {
-    .left {
-      img {
-        padding: 0 15px;
-      }
+    .left, .middle, .right {
+      flex-direction: column;
     }
-    .right {
-      padding: 40px 15px 0;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      margin: 40px 0 20px 0;
+    }
+    h1 {
+      margin-bottom: 0;
     }
   }
 }
